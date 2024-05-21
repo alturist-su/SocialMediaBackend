@@ -24,4 +24,9 @@ public class UserController {
     public String getMappingWithUrl(){
         return "With url";
     }
+
+    @GetMapping("/get")
+    public String getText(){
+        return "This is my text";
+    }
 }
