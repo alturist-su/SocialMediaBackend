@@ -6,6 +6,7 @@ public class User {
     private String email;
     private String password;
 
+    //User constructor 
     public User(){
 
     }
