@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+//
 //User controller class
 @RestController
 public class UserController {
@@ -26,7 +27,7 @@ public class UserController {
         return "With url";
     }
 
-    @GetMapping("/get")
+    @GetMapping("/getText")
     public String getText(){
         return "This is my text";
     }
