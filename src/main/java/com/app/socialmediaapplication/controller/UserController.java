@@ -21,7 +21,7 @@ public class UserController {
         return users;
     }
 
-    @GetMapping("/url")
+    @GetMapping("/withurl")
     public String getMappingWithUrl(){
         return "With url";
     }
