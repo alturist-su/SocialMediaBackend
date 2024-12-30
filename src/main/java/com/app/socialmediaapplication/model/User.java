@@ -1,44 +1,122 @@
 package com.app.socialmediaapplication.model;
 
+import com.app.socialmediaapplication.dto.UserDto;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+@Entity
+@Table(name = "users")
 public class User {
-    private String firstName;
-    private String lastName;
-    private String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    private String username;
+    private String name;
+    private String emil;
+    private String mobile;
+    private String website;
+    private String bio;
+    private String gender;
+    private String image;
     private String password;
 
-    public User(){
+    private Set<UserDto> follower = new HashSet<UserDto>();
+    private Set<UserDto> following = new HashSet<UserDto>();
+    private List<Story> stories = new ArrayList<>();
+    private List<Post> savedPost = new ArrayList<>();
 
-    }
-
-    public User(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+    public User(Integer id, String username, String name, String emil, String mobile, String website, String bio, String gender, String image, String password, Set<UserDto> follower, Set<UserDto> following, List<Story> stories, List<Post> savedPost) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+        this.emil = emil;
+        this.mobile = mobile;
+        this.website = website;
+        this.bio = bio;
+        this.gender = gender;
+        this.image = image;
         this.password = password;
+        this.follower = follower;
+        this.following = following;
+        this.stories = stories;
+        this.savedPost = savedPost;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getName() {
+        return name;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmil() {
+        return emil;
+    }
+
+    public void setEmil(String emil) {
+        this.emil = emil;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getPassword() {
@@ -47,5 +125,57 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<UserDto> getFollower() {
+        return follower;
+    }
+
+    public void setFollower(Set<UserDto> follower) {
+        this.follower = follower;
+    }
+
+    public Set<UserDto> getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(Set<UserDto> following) {
+        this.following = following;
+    }
+
+    public List<Story> getStories() {
+        return stories;
+    }
+
+    public void setStories(List<Story> stories) {
+        this.stories = stories;
+    }
+
+    public List<Post> getSavedPost() {
+        return savedPost;
+    }
+
+    public void setSavedPost(List<Post> savedPost) {
+        this.savedPost = savedPost;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", name='" + name + '\'' +
+                ", emil='" + emil + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", website='" + website + '\'' +
+                ", bio='" + bio + '\'' +
+                ", gender='" + gender + '\'' +
+                ", image='" + image + '\'' +
+                ", password='" + password + '\'' +
+                ", follower=" + follower +
+                ", following=" + following +
+                ", stories=" + stories +
+                ", savedPost=" + savedPost +
+                '}';
     }
 }
