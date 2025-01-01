@@ -25,9 +25,21 @@ public class User {
     private String image;
     private String password;
 
+    @Embedded
+    @ElementCollection
     private Set<UserDto> follower = new HashSet<UserDto>();
+
+    @Embedded
+    @ElementCollection
     private Set<UserDto> following = new HashSet<UserDto>();
+
+    // Defines a one-to-many relationship between User and Story entities
+    // CascadeType.ALL: All operations (persist, merge, remove, refresh, detach) will be cascaded to the related Story entities
+    // FetchType.EAGER: Stories will be fetched immediately along with the User entity
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Story> stories = new ArrayList<>();
+
+    @ManyToMany
     private List<Post> savedPost = new ArrayList<>();
 
     public User(Integer id, String username, String name, String emil, String mobile, String website, String bio, String gender, String image, String password, Set<UserDto> follower, Set<UserDto> following, List<Story> stories, List<Post> savedPost) {

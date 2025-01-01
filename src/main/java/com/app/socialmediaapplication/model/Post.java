@@ -31,6 +31,9 @@ public class Post {
     @OneToMany
     private List<Comments> comments = new ArrayList<>();
 
+    @Embedded
+    @ElementCollection
+    @JoinTable(name = "likedByUsers", joinColumns =  @JoinColumn(name = "user_id"))
     private Set<UserDto> likedByUsers = new HashSet<>();
 
     public Post(Integer id, String image, String caption, LocalDateTime createdAt, UserDto user, List<Comments> comments, Set<UserDto> likedByUsers) {
