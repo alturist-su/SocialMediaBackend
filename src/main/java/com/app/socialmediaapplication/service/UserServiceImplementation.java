@@ -6,6 +6,7 @@ import com.app.socialmediaapplication.model.User;
 import java.util.List;
 
 public class UserServiceImplementation implements UserService{
+
     @Override
     public User registerUser(User user) throws UserException {
         return null;
