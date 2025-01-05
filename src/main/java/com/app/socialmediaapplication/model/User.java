@@ -17,7 +17,7 @@ public class User {
 
     private String username;
     private String name;
-    private String emil;
+    private String email;
     private String mobile;
     private String website;
     private String bio;
@@ -42,11 +42,14 @@ public class User {
     @ManyToMany
     private List<Post> savedPost = new ArrayList<>();
 
-    public User(Integer id, String username, String name, String emil, String mobile, String website, String bio, String gender, String image, String password, Set<UserDto> follower, Set<UserDto> following, List<Story> stories, List<Post> savedPost) {
+    public User() {
+    }
+
+    public User(Integer id, String username, String name, String email, String mobile, String website, String bio, String gender, String image, String password, Set<UserDto> follower, Set<UserDto> following, List<Story> stories, List<Post> savedPost) {
         this.id = id;
         this.username = username;
         this.name = name;
-        this.emil = emil;
+        this.email = email;
         this.mobile = mobile;
         this.website = website;
         this.bio = bio;
@@ -83,12 +86,12 @@ public class User {
         this.name = name;
     }
 
-    public String getEmil() {
-        return emil;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmil(String emil) {
-        this.emil = emil;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getMobile() {
@@ -177,7 +180,7 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", name='" + name + '\'' +
-                ", emil='" + emil + '\'' +
+                ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", website='" + website + '\'' +
                 ", bio='" + bio + '\'' +
