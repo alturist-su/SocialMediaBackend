@@ -114,12 +114,17 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public List<User> findUserByIds(List<Integer> userIds) throws UserException {
-        return List.of();
+        List<User> users = userRepository.findAllUsersByUserIds(userIds);
+        return users;
     }
 
     @Override
     public List<User> searchUser(String query) throws UserException {
-        return List.of();
+        List<User> users = userRepository.findByQuery(query);
+        if(users.size()==0){
+            throw new UserException("User not found");
+        }
+        return users;
     }
 
     @Override
