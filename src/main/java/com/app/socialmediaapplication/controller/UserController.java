@@ -23,22 +23,24 @@ public class UserController {
     @GetMapping("/id/{id}")
     public ResponseEntity<User> findUserByIdHandler(@PathVariable Integer id) throws UserException {
         User user = userService.findUserById(id);
-        return new ResponseEntity<User>(HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     @GetMapping("/username/{username}")
     public ResponseEntity<User> findUserByUsername(@PathVariable String username) throws UserException {
         User user = userService.findUserByUsername(username);
-        return new ResponseEntity<User>(HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
 //    @PutMapping("follow/{followuserid}")
-//    public ResponseEntity<>
+//    public String followUserHandler(@PathVariable Integer followuserid) throws UserException{
+//        userService.followUser()
+//    }
 
-    @PostMapping("/save")
-    public User registerUser(User user) throws UserException {
-       // userService.registerUser(user);
-        return null;
+    @PostMapping("/register")
+    public ResponseEntity<User> registerUser(@RequestBody User user) throws UserException {
+        userService.registerUser(user);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

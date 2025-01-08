@@ -57,7 +57,11 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public User findUserByUsername(String username) throws UserException {
-        return null;
+        Optional<User> opt = userRepository.findByUsername(username);
+        if(opt.isPresent()){
+            return opt.get();
+        }
+        throw new UserException("User does not exist with username:"+username);
     }
 
     @Override
