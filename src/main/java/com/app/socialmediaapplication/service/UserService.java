@@ -2,7 +2,7 @@ package com.app.socialmediaapplication.service;
 
 import com.app.socialmediaapplication.exception.UserException;
 import com.app.socialmediaapplication.model.User;
-import jakarta.transaction.UserTransaction;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

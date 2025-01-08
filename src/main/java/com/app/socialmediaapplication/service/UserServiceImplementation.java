@@ -5,10 +5,12 @@ import com.app.socialmediaapplication.exception.UserException;
 import com.app.socialmediaapplication.model.User;
 import com.app.socialmediaapplication.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserServiceImplementation implements UserService{
 
     @Autowired

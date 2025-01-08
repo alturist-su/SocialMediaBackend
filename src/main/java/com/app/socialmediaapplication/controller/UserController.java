@@ -31,4 +31,16 @@ public class UserController {
         User user = userService.findUserByUsername(username);
         return new ResponseEntity<User>(HttpStatus.OK);
     }
+
+//    @PutMapping("follow/{followuserid}")
+//    public ResponseEntity<>
+
+    @PostMapping("/save")
+    public User registerUser(User user) throws UserException {
+       // userService.registerUser(user);
+        return null;
+    }
+
+
+
 }
