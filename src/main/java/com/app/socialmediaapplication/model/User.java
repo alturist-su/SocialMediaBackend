@@ -2,6 +2,7 @@ package com.app.socialmediaapplication.model;
 
 import com.app.socialmediaapplication.dto.UserDto;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashSet;
