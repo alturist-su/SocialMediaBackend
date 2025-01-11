@@ -54,12 +54,28 @@ public class UserController {
     }
 
     //findUserProfile
+    @PutMapping("/req")
+    public ResponseEntity<User> findUserByProfileHandler(@RequestHeader("Authorization") String token){
+        return null;
+    }
 
     //followUser
+    @PutMapping("/follow/{userId}")
+    public ResponseEntity<User> followUserHandler(@PathVariable Integer userId){
+        //userService.followUser()
+        return null;
+    }
+
 
     //unfollowUser
+    @PutMapping("/unfollow/{userId}")
+    public ResponseEntity<User> unfollowUserHandler(@PathVariable Integer userId){
+        //userService.unfollowUser()
+        return null;
+    }
 
     //updateUserDetails
+
 
 
 }
