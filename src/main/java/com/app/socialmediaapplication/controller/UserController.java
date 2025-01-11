@@ -53,6 +53,13 @@ public class UserController {
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
     }
 
+    //findUserProfile
+
+    //followUser
+
+    //unfollowUser
+
+    //updateUserDetails
 
 
 }
