@@ -35,11 +35,11 @@ public class UserController {
 //        userService.followUser()
 //    }
 
-    @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody User user) throws UserException {
-        userService.registerUser(user);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<User> registerUser(@RequestBody User user) throws UserException {
+//        userService.registerUser(user);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
     @GetMapping("/users/{userIds}")
     public ResponseEntity<List<User>> findUserByUserIdsHandler(@PathVariable List<Integer> userIds) throws UserException{
